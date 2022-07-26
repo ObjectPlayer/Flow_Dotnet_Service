@@ -1,0 +1,271 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Flow-Dotnet-Project/1.0.0": {
+        "dependencies": {
+          "Flow.Net.Sdk": "0.7.3"
+        },
+        "runtime": {
+          "Flow-Dotnet-Project.dll": {}
+        }
+      },
+      "Flow.Net.Sdk/0.7.3": {
+        "dependencies": {
+          "Flow.Net.Sdk.Client.Grpc": "0.7.3",
+          "Flow.Net.Sdk.Client.Http": "0.7.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flow.Net.Sdk.dll": {
+            "assemblyVersion": "0.0.1.0",
+            "fileVersion": "0.0.1.0"
+          }
+        }
+      },
+      "Flow.Net.Sdk.Client.Grpc/0.7.3": {
+        "dependencies": {
+          "Flow.Net.Sdk.Core": "0.7.3",
+          "Google.Protobuf": "3.21.2",
+          "Grpc.Net.Client": "2.47.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flow.Net.Sdk.Client.Grpc.dll": {
+            "assemblyVersion": "0.0.1.0",
+            "fileVersion": "0.0.1.0"
+          }
+        }
+      },
+      "Flow.Net.Sdk.Client.Http/0.7.3": {
+        "dependencies": {
+          "Flow.Net.Sdk.Core": "0.7.3",
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flow.Net.Sdk.Client.Http.dll": {
+            "assemblyVersion": "0.0.1.0",
+            "fileVersion": "0.0.1.0"
+          }
+        }
+      },
+      "Flow.Net.Sdk.Core/0.7.3": {
+        "dependencies": {
+          "Nethereum.RLP": "4.6.1",
+          "Portable.BouncyCastle": "1.9.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flow.Net.Sdk.Core.dll": {
+            "assemblyVersion": "0.0.1.0",
+            "fileVersion": "0.0.1.0"
+          }
+        }
+      },
+      "Google.Protobuf/3.21.2": {
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "assemblyVersion": "3.21.2.0",
+            "fileVersion": "3.21.2.0"
+          }
+        }
+      },
+      "Grpc.Core.Api/2.47.0": {
+        "dependencies": {
+          "System.Memory": "4.5.3"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.47.0.0"
+          }
+        }
+      },
+      "Grpc.Net.Client/2.47.0": {
+        "dependencies": {
+          "Grpc.Net.Common": "2.47.0",
+          "Microsoft.Extensions.Logging.Abstractions": "3.0.3"
+        },
+        "runtime": {
+          "lib/net6.0/Grpc.Net.Client.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.47.0.0"
+          }
+        }
+      },
+      "Grpc.Net.Common/2.47.0": {
+        "dependencies": {
+          "Grpc.Core.Api": "2.47.0"
+        },
+        "runtime": {
+          "lib/net6.0/Grpc.Net.Common.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.47.0.0"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/3.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "assemblyVersion": "3.0.3.0",
+            "fileVersion": "3.0.320.7202"
+          }
+        }
+      },
+      "Nethereum.Hex/4.6.1": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/net5.0/Nethereum.Hex.dll": {
+            "assemblyVersion": "4.6.0.0",
+            "fileVersion": "4.6.0.0"
+          }
+        }
+      },
+      "Nethereum.RLP/4.6.1": {
+        "dependencies": {
+          "Nethereum.Hex": "4.6.1",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/net5.0/Nethereum.RLP.dll": {
+            "assemblyVersion": "4.6.0.0",
+            "fileVersion": "4.6.0.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.2.21924"
+          }
+        }
+      },
+      "Portable.BouncyCastle/1.9.0": {
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "assemblyVersion": "1.9.0.0",
+            "fileVersion": "1.9.0.1"
+          }
+        }
+      },
+      "System.ComponentModel.Annotations/5.0.0": {},
+      "System.Memory/4.5.3": {}
+    }
+  },
+  "libraries": {
+    "Flow-Dotnet-Project/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Flow.Net.Sdk/0.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JuLvViwshpUPGkdQQU83jcIuM5Q6ZYTjYOeBvhR649C3PiTR3rgW8OtAFSaDHZLa2cCIvK1+/cYGPcTq7neZ5g==",
+      "path": "flow.net.sdk/0.7.3",
+      "hashPath": "flow.net.sdk.0.7.3.nupkg.sha512"
+    },
+    "Flow.Net.Sdk.Client.Grpc/0.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sPdkmrBPSODRllUvFkEB9yeQCiqCpd+gpDNoMFtCSf6M7VQGgZNXsLXXJaYZ+yBwDLY5VaIkBXj2NNSo02Cv3A==",
+      "path": "flow.net.sdk.client.grpc/0.7.3",
+      "hashPath": "flow.net.sdk.client.grpc.0.7.3.nupkg.sha512"
+    },
+    "Flow.Net.Sdk.Client.Http/0.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VWhWSUBSzAD6+28jCidqUqABnOibekLZv2zPBwg0sBbQKvyOZ7FfRzlHYEz4d+P6v+i9aCnrH9vq6QjnMMR0Ig==",
+      "path": "flow.net.sdk.client.http/0.7.3",
+      "hashPath": "flow.net.sdk.client.http.0.7.3.nupkg.sha512"
+    },
+    "Flow.Net.Sdk.Core/0.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dak8uoVSt38IzeIyy/rggRXJwpO7Awa4aG7AQKE9gBg4auTfpxk4KftEpw4BvhIZiZX4w2qp2g1Nsr93rn91Zg==",
+      "path": "flow.net.sdk.core/0.7.3",
+      "hashPath": "flow.net.sdk.core.0.7.3.nupkg.sha512"
+    },
+    "Google.Protobuf/3.21.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-91vdjMcbesfibUtE2n6bVWelT+7J7hExMb9WAEQXuM748+aoIrrUECkIBCmQG+RiM4KvEccVgutFdzl1l6G+Rw==",
+      "path": "google.protobuf/3.21.2",
+      "hashPath": "google.protobuf.3.21.2.nupkg.sha512"
+    },
+    "Grpc.Core.Api/2.47.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oZXapxH/2WHAVALghNauo+r/bp6zjgQ6r0v8FizLLQg0/j/FkK2u3WZ7cLOL9Y5H4oLg+wLclO8FSvNTQpNR5Q==",
+      "path": "grpc.core.api/2.47.0",
+      "hashPath": "grpc.core.api.2.47.0.nupkg.sha512"
+    },
+    "Grpc.Net.Client/2.47.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DLbUC3T8dMmhA2iqpaJo0X4g7fAi3FyVbDd0/jBXrlqc/bcyA1wPBzLx6mWOWoGUb5S89xL2svnsM8SfzzNa2Q==",
+      "path": "grpc.net.client/2.47.0",
+      "hashPath": "grpc.net.client.2.47.0.nupkg.sha512"
+    },
+    "Grpc.Net.Common/2.47.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Cv76h7noEN2s9cwIdEspOeDjeqcU6Nm34OmjSbRhD/FDBXFmG7rmSfJTPCEB1LYjZWfmf7uUH+nYcHR1I7oQqw==",
+      "path": "grpc.net.common/2.47.0",
+      "hashPath": "grpc.net.common.2.47.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging.Abstractions/3.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m2Jyi/MEn043WMI1I6J1ALuCThktZ93rd7eqzYeLmMcA0bdZC+TBVl0LuEbEWM01dWeeBjOoagjNwQTzOi2r6A==",
+      "path": "microsoft.extensions.logging.abstractions/3.0.3",
+      "hashPath": "microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512"
+    },
+    "Nethereum.Hex/4.6.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+7OdiF9R1X9Su3hXcKLDa/CMnsQhhgy5V3qLV+SvK8kzA/j7OXEgPHU2eRA8eo8CxwPFUPegVriv9VQFZ+HgpQ==",
+      "path": "nethereum.hex/4.6.1",
+      "hashPath": "nethereum.hex.4.6.1.nupkg.sha512"
+    },
+    "Nethereum.RLP/4.6.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yeJnCf0/O02g41KqHZemzS4lgZg+W8NMUbQRe/CL2AWtVQXUFFKaHb2+J6ZNMLJUd0TJmyKQ1pXKJIcEyiRTEA==",
+      "path": "nethereum.rlp/4.6.1",
+      "hashPath": "nethereum.rlp.4.6.1.nupkg.sha512"
+    },
+    "Newtonsoft.Json/11.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "path": "newtonsoft.json/11.0.2",
+      "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
+    },
+    "Portable.BouncyCastle/1.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eZZBCABzVOek+id9Xy04HhmgykF0wZg9wpByzrWN7q8qEI0Qen9b7tfd7w8VA3dOeesumMG7C5ZPy0jk7PSRHw==",
+      "path": "portable.bouncycastle/1.9.0",
+      "hashPath": "portable.bouncycastle.1.9.0.nupkg.sha512"
+    },
+    "System.ComponentModel.Annotations/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dMkqfy2el8A8/I76n2Hi1oBFEbG1SfxD2l5nhwXV3XjlnOmwxJlQbYpJH4W51odnU9sARCSAgv7S3CyAFMkpYg==",
+      "path": "system.componentmodel.annotations/5.0.0",
+      "hashPath": "system.componentmodel.annotations.5.0.0.nupkg.sha512"
+    },
+    "System.Memory/4.5.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
+      "path": "system.memory/4.5.3",
+      "hashPath": "system.memory.4.5.3.nupkg.sha512"
+    }
+  }
+}
