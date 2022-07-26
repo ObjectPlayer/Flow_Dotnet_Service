@@ -1,5 +1,5 @@
 ﻿
-using FlowCommService;
+using FlowCommServiceTesting;
 
 namespace flow_dotnet_service
 {
@@ -7,11 +7,11 @@ namespace flow_dotnet_service
     {
         static async Task Main(string[] args)
         {
-            Console.WriteLine("Hello Sham!");
+            Console.WriteLine("Hello Sham 1");
 
-            FlowService flowService = new FlowService();
+            FlowServiceTesting flowServiceTesting = new FlowServiceTesting();
 
-            await flowService.getBlock();
+            await flowServiceTesting.CompleteTesting();
 
 
             Console.WriteLine("Hello Sham 2");

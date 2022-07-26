@@ -26,20 +26,6 @@ namespace FlowCommService
             this._flowGrpcClient = new FlowGrpcClient(Flow.Net.Sdk.Client.Grpc.ServerUrl.TestnetHost);
         }
 
-        public async Task getBlock()
-        {
-            // get the latest sealed block
-            var latestBlock = await _flowHttpClient.GetLatestBlockAsync();
-            PrintResult(latestBlock);
-
-            // get the block by ID
-            var blockByIdResult = await _flowHttpClient.GetBlockByIdAsync(latestBlock.Header.Id);
-            PrintResult(blockByIdResult);
-
-            // get block by height
-            var blockByHeightResult = await _flowHttpClient.GetBlockByHeightAsync(latestBlock.Header.Height);
-            PrintResult(blockByHeightResult);
-        }
 
 
         private void PrintResult(FlowBlock flowBlock)
@@ -48,6 +34,49 @@ namespace FlowCommService
             Console.WriteLine($"height: {flowBlock.Header.Height}");
             Console.WriteLine($"timestamp: {flowBlock.Header.Timestamp}\n");
         }
+
+
+
+        //Get Blockchain data
+
+        //Get Blocks
+        public async Task<FlowBlock> getBlock(dynamic data = null, string type = "")
+        {
+            FlowBlock blockResult;
+
+            if (data != null && type.Equals("id"))
+                blockResult = await _flowHttpClient.GetBlockByIdAsync(data);
+
+
+            else if (data != null && type.Equals("height"))
+                blockResult = await _flowHttpClient.GetBlockByHeightAsync(data);
+
+            else
+                blockResult = await _flowHttpClient.GetLatestBlockAsync();
+
+            return blockResult;
+
+        }
+
+        //Get Collections
+
+        //Get Transactions
+
+        //Get Accounts
+
+        //Get Events
+
+
+        public void PrintResult(dynamic data, string type)
+        {
+            if (type.Equals("block"))
+            {
+                Console.WriteLine($"ID: {data.Header.Id}");
+                Console.WriteLine($"height: {data.Header.Height}");
+                Console.WriteLine($"timestamp: {data.Header.Timestamp}\n");
+            }
+        }
+
 
 
     }
