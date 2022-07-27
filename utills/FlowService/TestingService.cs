@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using FlowCommService;
+using FlowServiceConstants;
 
 namespace FlowCommServiceTesting
 {
@@ -20,15 +21,15 @@ namespace FlowCommServiceTesting
 
             var lastestBlock = await flowService.getBlock();
 
-            flowService.PrintResult(lastestBlock, "block");
+            flowService.PrintResult(lastestBlock, Constants.DataTypes.block);
 
-            var lastestBlockById = await flowService.getBlock(lastestBlock.Header.Id, "id");
+            var lastestBlockById = await flowService.getBlock(lastestBlock.Header.Id, Constants.DataTypes.id);
 
-            flowService.PrintResult(lastestBlockById, "block");
+            flowService.PrintResult(lastestBlockById, Constants.DataTypes.block);
 
-            var lastestBlockByHeight = await flowService.getBlock(lastestBlock.Header.Height, "height");
+            var lastestBlockByHeight = await flowService.getBlock(lastestBlock.Header.Height, Constants.DataTypes.height);
 
-            flowService.PrintResult(lastestBlockByHeight, "block");
+            flowService.PrintResult(lastestBlockByHeight, Constants.DataTypes.block);
 
         }
 

@@ -6,6 +6,7 @@ using Flow.Net.Sdk.Core.Client;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using FlowServiceConstants;
 
 
 namespace FlowCommService
@@ -26,17 +27,6 @@ namespace FlowCommService
             this._flowGrpcClient = new FlowGrpcClient(Flow.Net.Sdk.Client.Grpc.ServerUrl.TestnetHost);
         }
 
-
-
-        private void PrintResult(FlowBlock flowBlock)
-        {
-            Console.WriteLine($"ID: {flowBlock.Header.Id}");
-            Console.WriteLine($"height: {flowBlock.Header.Height}");
-            Console.WriteLine($"timestamp: {flowBlock.Header.Timestamp}\n");
-        }
-
-
-
         //Get Blockchain data
 
         //Get Blocks
@@ -44,11 +34,11 @@ namespace FlowCommService
         {
             FlowBlock blockResult;
 
-            if (data != null && type.Equals("id"))
+            if (data != null && type.Equals(Constants.DataTypes.id))
                 blockResult = await _flowHttpClient.GetBlockByIdAsync(data);
 
 
-            else if (data != null && type.Equals("height"))
+            else if (data != null && type.Equals(Constants.DataTypes.height))
                 blockResult = await _flowHttpClient.GetBlockByHeightAsync(data);
 
             else
@@ -79,14 +69,14 @@ namespace FlowCommService
 
         public void PrintResult(dynamic data, string type)
         {
-            if (type.Equals("block"))
+            if (type.Equals(Constants.DataTypes.block))
             {
                 Console.WriteLine($"ID: {data.Header.Id}");
                 Console.WriteLine($"height: {data.Header.Height}");
                 Console.WriteLine($"timestamp: {data.Header.Timestamp}\n");
             }
 
-            else if (type.Equals("address"))
+            else if (type.Equals(Constants.DataTypes.account))
             {
                 Console.WriteLine($"Address: {data.Address.Address}");
                 Console.WriteLine($"Balance: {data.Balance}");
