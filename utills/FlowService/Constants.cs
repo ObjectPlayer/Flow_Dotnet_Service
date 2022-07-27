@@ -15,6 +15,7 @@ namespace FlowServiceConstants
         {
             public const string block = "block";
             public const string transaction = "transaction";
+            public const string transactionResult = "transactionResult";
             public const string account = "account";
             public const string keys = "keys";
             public const string id = "id";

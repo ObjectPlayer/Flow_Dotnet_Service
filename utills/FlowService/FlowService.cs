@@ -60,6 +60,16 @@ namespace FlowCommService
             return transacctionResult;
         }
 
+        //Get Transaction Result
+        public async Task<FlowTransactionResult> getTransactionResult(string transactionId)
+        {
+            FlowTransactionResult transacctionResult;
+
+            transacctionResult = await _flowHttpClient.GetTransactionResultAsync(transactionId);
+
+            return transacctionResult;
+        }
+
 
         //Get Accounts
         public async Task<FlowAccount> getAccount(string address)
@@ -119,6 +129,11 @@ namespace FlowCommService
                 Console.WriteLine($"Proposer: {data.ProposalKey.Address.Address}");
             }
 
+            else if (type.Equals(Constants.DataTypes.transactionResult))
+            {
+                Console.WriteLine($"Status: {data.Status}");
+                Console.WriteLine($"Error: {data.ErrorMessage}\n");
+            }
 
 
         }
