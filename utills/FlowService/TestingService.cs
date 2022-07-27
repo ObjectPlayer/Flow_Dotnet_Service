@@ -35,10 +35,16 @@ namespace FlowCommServiceTesting
 
         public async Task getAccount()
         {
-
             var userAddress = Constants.FlowTestingServiceConstants.testingAddress1;
             var userAccountResponse = await flowService.getAccount(userAddress);
             flowService.PrintResult(userAccountResponse, Constants.DataTypes.account);
+        }
+
+        public async Task getTransation()
+        {
+            var transactionId = Constants.FlowTestingServiceConstants.testingTransactionId;
+            var transactionResponse = await flowService.getTransaction(transactionId);
+            flowService.PrintResult(transactionResponse, Constants.DataTypes.transaction);
         }
 
 
@@ -46,6 +52,7 @@ namespace FlowCommServiceTesting
         {
             await getBlock();
             await getAccount();
+            await getTransation();
         }
 
 
