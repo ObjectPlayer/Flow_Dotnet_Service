@@ -37,7 +37,7 @@ namespace FlowCommServiceTesting
         {
 
             var userAddress = Constants.FlowTestingServiceConstants.testingAddress1;
-            var userAccountResponse = await flowService.getAccounts(userAddress);
+            var userAccountResponse = await flowService.getAccount(userAddress);
             flowService.PrintResult(userAccountResponse, Constants.DataTypes.account);
         }
 

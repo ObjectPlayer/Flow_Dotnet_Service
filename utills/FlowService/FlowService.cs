@@ -51,13 +51,22 @@ namespace FlowCommService
         //Get Collections
 
         //Get Transactions
+        public async Task<FlowTransactionResponse> getTransaction(string transactionId)
+        {
+            FlowTransactionResponse transacctionResult;
+
+            transacctionResult = await _flowHttpClient.GetTransactionAsync(transactionId);
+
+            return transacctionResult;
+        }
+
 
         //Get Accounts
-        public async Task<FlowAccount> getAccounts(string address)
+        public async Task<FlowAccount> getAccount(string address)
         {
             FlowAccount accountResult;
 
-            var addressWithoutPrefix = Regex.Replace(address, Constants.DataTypes.addressPrefix,"");
+            var addressWithoutPrefix = Regex.Replace(address, Constants.DataTypes.addressPrefix, "");
 
             accountResult = await _flowHttpClient.GetAccountAtLatestBlockAsync(addressWithoutPrefix);
 
@@ -101,6 +110,15 @@ namespace FlowCommService
                     Console.WriteLine($"Key Weight: {key.Weight}\n\n");
                 }
             }
+
+            else if (type.Equals(Constants.DataTypes.transaction))
+            {
+                Console.WriteLine($"ReferenceBlockId: {data.ReferenceBlockId}");
+                Console.WriteLine($"Payer: {data.Payer.Address}");
+                Console.WriteLine("Authorizers: [{0}]", data.Authorizers);
+                Console.WriteLine($"Proposer: {data.ProposalKey.Address.Address}");
+            }
+
 
 
         }
