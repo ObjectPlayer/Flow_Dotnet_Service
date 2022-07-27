@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using FlowServiceConstants;
-
+using System.Text.RegularExpressions;
 
 namespace FlowCommService
 {
@@ -57,7 +57,9 @@ namespace FlowCommService
         {
             FlowAccount accountResult;
 
-            accountResult = await _flowHttpClient.GetAccountAtLatestBlockAsync(address);
+            var addressWithoutPrefix = Regex.Replace(address, @"0x","");
+
+            accountResult = await _flowHttpClient.GetAccountAtLatestBlockAsync(addressWithoutPrefix);
 
             return accountResult;
 
@@ -82,7 +84,25 @@ namespace FlowCommService
                 Console.WriteLine($"Balance: {data.Balance}");
                 Console.WriteLine($"Contracts: {data.Contracts.Count}");
                 Console.WriteLine($"Keys: {data.Keys.Count}\n");
+                PrintResult(data.Keys, Constants.DataTypes.keys);
             }
+
+            else if (type.Equals(Constants.DataTypes.keys))
+            {
+                foreach (var key in data)
+                {
+                    Console.WriteLine($"Key Index: {key.Index}");
+                    Console.WriteLine($"Key Sequence Number: {key.SequenceNumber}");
+                    Console.WriteLine($"Key Public Key: {key.PublicKey}");
+                    Console.WriteLine($"Key Private Key: {key.PrivateKey}");
+                    Console.WriteLine($"Key Hash Algorithm: {key.HashAlgorithm}");
+                    Console.WriteLine($"Key Signature Algorithm: {key.SignatureAlgorithm}");
+                    Console.WriteLine($"Key Revoked: {key.Revoked}");
+                    Console.WriteLine($"Key Weight: {key.Weight}\n\n");
+                }
+            }
+
+
         }
 
 
