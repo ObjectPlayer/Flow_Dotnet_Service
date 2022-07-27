@@ -36,24 +36,16 @@ namespace FlowCommServiceTesting
         public async Task getAccount()
         {
 
-            var lastestBlock = await flowService.getBlock();
-
-            flowService.PrintResult(lastestBlock, "block");
-
-            var lastestBlockById = await flowService.getBlock(lastestBlock.Header.Id, "id");
-
-            flowService.PrintResult(lastestBlockById, "block");
-
-            var lastestBlockByHeight = await flowService.getBlock(lastestBlock.Header.Height, "height");
-
-            flowService.PrintResult(lastestBlockByHeight, "block");
-
+            var userAddress = Constants.FlowTestingServiceConstants.testingAddress1;
+            var userAccountResponse = await flowService.getAccounts(userAddress);
+            flowService.PrintResult(userAccountResponse, Constants.DataTypes.account);
         }
 
 
         public async Task CompleteTesting()
         {
             await getBlock();
+            await getAccount();
         }
 
 
