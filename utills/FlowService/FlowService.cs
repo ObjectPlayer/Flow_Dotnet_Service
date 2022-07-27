@@ -57,7 +57,7 @@ namespace FlowCommService
         {
             FlowAccount accountResult;
 
-            var addressWithoutPrefix = Regex.Replace(address, @"0x","");
+            var addressWithoutPrefix = Regex.Replace(address, Constants.DataTypes.addressPrefix,"");
 
             accountResult = await _flowHttpClient.GetAccountAtLatestBlockAsync(addressWithoutPrefix);
 

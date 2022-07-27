@@ -14,9 +14,10 @@ namespace FlowServiceConstants
             public const string block = "block";
             public const string account = "account";
             public const string keys = "keys";
-
             public const string id = "id";
             public const string height = "height";
+            public const string addressPrefix = @"0x";
+
 
         }
     }
