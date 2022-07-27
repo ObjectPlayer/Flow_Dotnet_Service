@@ -126,7 +126,7 @@ namespace FlowCommService
                 Console.WriteLine($"ReferenceBlockId: {data.ReferenceBlockId}");
                 Console.WriteLine($"Payer: {data.Payer.Address}");
                 Console.WriteLine("Authorizers: [{0}]", data.Authorizers);
-                Console.WriteLine($"Proposer: {data.ProposalKey.Address.Address}");
+                Console.WriteLine($"Proposer: {data.ProposalKey.Address.Address}\n");
             }
 
             else if (type.Equals(Constants.DataTypes.transactionResult))

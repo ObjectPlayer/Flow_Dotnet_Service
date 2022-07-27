@@ -47,12 +47,20 @@ namespace FlowCommServiceTesting
             flowService.PrintResult(transactionResponse, Constants.DataTypes.transaction);
         }
 
+        public async Task getTransationResult()
+        {
+            var transactionId = Constants.FlowTestingServiceConstants.testingTransactionId;
+            var transactionResponse = await flowService.getTransactionResult(transactionId);
+            flowService.PrintResult(transactionResponse, Constants.DataTypes.transactionResult);
+        }
+
 
         public async Task CompleteTesting()
         {
             await getBlock();
             await getAccount();
             await getTransation();
+            await getTransationResult();
         }
 
 
