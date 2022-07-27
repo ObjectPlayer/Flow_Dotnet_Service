@@ -63,6 +63,16 @@ namespace FlowCommService
         //Get Transactions
 
         //Get Accounts
+        public async Task<FlowAccount> getAccounts(string address)
+        {
+            FlowAccount accountResult;
+
+            accountResult = await _flowHttpClient.GetAccountAtLatestBlockAsync(address);
+
+            return accountResult;
+
+        }
+
 
         //Get Events
 
@@ -74,6 +84,14 @@ namespace FlowCommService
                 Console.WriteLine($"ID: {data.Header.Id}");
                 Console.WriteLine($"height: {data.Header.Height}");
                 Console.WriteLine($"timestamp: {data.Header.Timestamp}\n");
+            }
+
+            else if (type.Equals("address"))
+            {
+                Console.WriteLine($"Address: {data.Address.Address}");
+                Console.WriteLine($"Balance: {data.Balance}");
+                Console.WriteLine($"Contracts: {data.Contracts.Count}");
+                Console.WriteLine($"Keys: {data.Keys.Count}\n");
             }
         }
 
