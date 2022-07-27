@@ -81,13 +81,22 @@ namespace FlowCommService
             accountResult = await _flowHttpClient.GetAccountAtLatestBlockAsync(addressWithoutPrefix);
 
             return accountResult;
-
         }
 
 
         //Get Events
+        public async Task<IEnumerable<FlowBlockEvent>> getEvent(string eventName, ulong startHeight = 0, ulong endHeight = 1000)
+        {
+            IEnumerable<FlowBlockEvent> eventResult;
+
+            eventResult = await _flowHttpClient.GetEventsForHeightRangeAsync(eventName, startHeight, endHeight);
+
+            return eventResult;
+
+        }
 
 
+        // PrintData
         public void PrintResult(dynamic data, string type)
         {
             if (type.Equals(Constants.DataTypes.block))
@@ -133,6 +142,16 @@ namespace FlowCommService
             {
                 Console.WriteLine($"Status: {data.Status}");
                 Console.WriteLine($"Error: {data.ErrorMessage}\n");
+            }
+
+            else if (type.Equals(Constants.DataTypes.events))
+            {
+                foreach (var @event in data)
+                {
+                    Console.WriteLine($"Type: {@event.Type}");
+                    Console.WriteLine($"Values: {@event.Payload.Encode()}");
+                    Console.WriteLine($"Transaction ID: {@event.TransactionId.FromByteStringToHex()} \n");
+                }
             }
 
 
