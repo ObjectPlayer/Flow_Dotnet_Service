@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using FlowCommService;
+using FlowServiceConstants;
 
 namespace FlowCommServiceTesting
 {
@@ -20,22 +21,62 @@ namespace FlowCommServiceTesting
 
             var lastestBlock = await flowService.getBlock();
 
-            flowService.PrintResult(lastestBlock, "block");
+            flowService.PrintResult(lastestBlock, Constants.DataTypes.block);
 
-            var lastestBlockById = await flowService.getBlock(lastestBlock.Header.Id, "id");
+            var lastestBlockById = await flowService.getBlock(lastestBlock.Header.Id, Constants.DataTypes.id);
 
-            flowService.PrintResult(lastestBlockById, "block");
+            flowService.PrintResult(lastestBlockById, Constants.DataTypes.block);
 
-            var lastestBlockByHeight = await flowService.getBlock(lastestBlock.Header.Height, "height");
+            var lastestBlockByHeight = await flowService.getBlock(lastestBlock.Header.Height, Constants.DataTypes.height);
 
-            flowService.PrintResult(lastestBlockByHeight, "block");
+            flowService.PrintResult(lastestBlockByHeight, Constants.DataTypes.block);
 
+        }
+
+        public async Task getAccount()
+        {
+            var userAddress = Constants.FlowTestingServiceConstants.testingAddress1;
+            var userAccountResponse = await flowService.getAccount(userAddress);
+            flowService.PrintResult(userAccountResponse, Constants.DataTypes.account);
+        }
+
+        public async Task getTransation()
+        {
+            var transactionId = Constants.FlowTestingServiceConstants.testingTransactionId;
+            var transactionResponse = await flowService.getTransaction(transactionId);
+            flowService.PrintResult(transactionResponse, Constants.DataTypes.transaction);
+        }
+
+        public async Task getTransationResult()
+        {
+            var transactionId = Constants.FlowTestingServiceConstants.testingTransactionId;
+            var transactionResponse = await flowService.getTransactionResult(transactionId);
+            flowService.PrintResult(transactionResponse, Constants.DataTypes.transactionResult);
+        }
+
+        public async Task getEvents()
+        {
+            var eventName = Constants.FlowTestingServiceConstants.testingEventName;
+            var eventResponse = await flowService.getEvent(eventName);
+            flowService.PrintResult(eventResponse, Constants.DataTypes.events);
+        }
+
+        public async Task getCollection()
+        {
+            var collectionId = Constants.FlowTestingServiceConstants.collectionId;
+            var collectionResponse = await flowService.getCollection(collectionId);
+            flowService.PrintResult(collectionResponse, Constants.DataTypes.events);
         }
 
 
         public async Task CompleteTesting()
         {
             await getBlock();
+            await getAccount();
+            await getTransation();
+            await getTransationResult();
+            await getEvents();
+            await getCollection();
         }
 
 
