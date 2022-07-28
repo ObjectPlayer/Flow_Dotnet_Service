@@ -7,7 +7,7 @@ namespace FlowServiceConstants
         {
             public const string testingAddress1 = "0x8ae16e3d178394d9";
             public const string testingTransactionId = "543985c53f0447f29b682e0de812b457be19a69bcc101f1b56f63e8575cbd843";
-            public const string testingEventName = "A.cb2d04fc89307107.JoyrideMultiToken";
+            public const string testingEventName = "A.cb2d04fc89307107.JoyrideMultiToken.JoyrideMultiTokenInfoEvent";
 
         }
 

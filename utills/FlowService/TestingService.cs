@@ -54,6 +54,13 @@ namespace FlowCommServiceTesting
             flowService.PrintResult(transactionResponse, Constants.DataTypes.transactionResult);
         }
 
+        public async Task getEvents()
+        {
+            var eventName = Constants.FlowTestingServiceConstants.testingEventName;
+            var eventResponse = await flowService.getEvent(eventName);
+            flowService.PrintResult(eventResponse, Constants.DataTypes.events);
+        }
+
 
         public async Task CompleteTesting()
         {
@@ -61,6 +68,7 @@ namespace FlowCommServiceTesting
             await getAccount();
             await getTransation();
             await getTransationResult();
+            await getEvents();
         }
 
 

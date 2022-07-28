@@ -85,7 +85,7 @@ namespace FlowCommService
 
 
         //Get Events
-        public async Task<IEnumerable<FlowBlockEvent>> getEvent(string eventName, ulong startHeight = 0, ulong endHeight = 1000)
+        public async Task<IEnumerable<FlowBlockEvent>> getEvent(string eventName, UInt64 startHeight = 74749992, UInt64 endHeight = 74751562)
         {
             IEnumerable<FlowBlockEvent> eventResult;
 
