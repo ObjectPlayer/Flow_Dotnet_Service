@@ -163,6 +163,12 @@ namespace FlowCommService
                 }
             }
 
+            else if (type.Equals(Constants.DataTypes.collection))
+            {
+                Console.WriteLine($"ID: {data.Id.FromByteStringToHex()}");
+                Console.WriteLine("Transactions: [{0}]", data.TransactionIds);
+            }
+
 
         }
 
