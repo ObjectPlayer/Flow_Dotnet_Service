@@ -49,6 +49,15 @@ namespace FlowCommService
         }
 
         //Get Collections
+        public async Task<FlowCollection> getCollection(string collectionId)
+        {
+            FlowCollection collectionResult;
+
+            collectionResult = await _flowHttpClient.GetCollectionAsync(collectionId);
+
+            return collectionResult;
+        }
+
 
         //Get Transactions
         public async Task<FlowTransactionResponse> getTransaction(string transactionId)
