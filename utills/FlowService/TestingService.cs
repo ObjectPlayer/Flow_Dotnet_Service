@@ -35,39 +35,38 @@ namespace FlowCommServiceTesting
 
         public async Task getAccount()
         {
-            var userAddress = Constants.FlowTestingServiceConstants.testingAddress1;
+            string userAddress = Constants.FlowTestingServiceConstants.testingAddress1;
             var userAccountResponse = await flowService.getAccount(userAddress);
             flowService.PrintResult(userAccountResponse, Constants.DataTypes.account);
         }
 
         public async Task getTransation()
         {
-            var transactionId = Constants.FlowTestingServiceConstants.testingTransactionId;
+            string transactionId = Constants.FlowTestingServiceConstants.testingTransactionId;
             var transactionResponse = await flowService.getTransaction(transactionId);
             flowService.PrintResult(transactionResponse, Constants.DataTypes.transaction);
         }
 
         public async Task getTransationResult()
         {
-            var transactionId = Constants.FlowTestingServiceConstants.testingTransactionId;
+            string transactionId = Constants.FlowTestingServiceConstants.testingTransactionId;
             var transactionResponse = await flowService.getTransactionResult(transactionId);
             flowService.PrintResult(transactionResponse, Constants.DataTypes.transactionResult);
         }
 
         public async Task getEvents()
         {
-            var eventName = Constants.FlowTestingServiceConstants.testingEventName;
-            var eventResponse = await flowService.getEvent(eventName);
-            flowService.PrintResult(eventResponse, Constants.DataTypes.events);
+            string eventName = Constants.FlowTestingServiceConstants.testingEventName;
+            ulong startBlockHeight = Constants.FlowTestingServiceConstants.startBlockHeight;
+            ulong endBlockHeight = startBlockHeight+100;;
 
-            // var transactionId = Constants.FlowTestingServiceConstants.testingTransactionId;
-            // var txResult = await flowService.getTransactionResult(transactionId);
-            // flowService.PrintResult(txResult.Events,Constants.DataTypes.events);
+            var eventResponse = await flowService.getEvent(eventName, startBlockHeight, endBlockHeight);
+            flowService.PrintResult(eventResponse, Constants.DataTypes.events);
         }
 
         public async Task getCollection()
         {
-            var collectionId = Constants.FlowTestingServiceConstants.collectionId;
+            string collectionId = Constants.FlowTestingServiceConstants.collectionId;
             var collectionResponse = await flowService.getCollection(collectionId);
             flowService.PrintResult(collectionResponse, Constants.DataTypes.events);
         }
@@ -79,8 +78,8 @@ namespace FlowCommServiceTesting
             // await getAccount();
             // await getTransation();
             // await getTransationResult();
-            await getEvents();
-            //await getCollection();
+            // await getEvents();
+            await getCollection();
         }
 
 
