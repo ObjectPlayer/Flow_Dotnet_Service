@@ -94,7 +94,7 @@ namespace FlowCommService
 
 
         //Get Events
-        public async Task<IEnumerable<FlowBlockEvent>> getEvent(string eventName, UInt64 startHeight = 74749992, UInt64 endHeight = 74751562)
+        public async Task<IEnumerable<FlowBlockEvent>> getEvent(string eventName, UInt64 startHeight = 0, UInt64 endHeight = 10000)
         {
             IEnumerable<FlowBlockEvent> eventResult;
 
@@ -158,8 +158,8 @@ namespace FlowCommService
                 foreach (var @event in data)
                 {
                     Console.WriteLine($"Type: {@event.Type}");
-                    Console.WriteLine($"Values: {@event.Payload.Encode()}");
-                    Console.WriteLine($"Transaction ID: {@event.TransactionId.FromByteStringToHex()} \n");
+                    Console.WriteLine($"Values: {@event.Payload}");
+                    Console.WriteLine($"Transaction ID: {@event.TransactionId} \n");
                 }
             }
 
