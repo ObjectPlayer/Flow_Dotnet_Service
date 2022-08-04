@@ -68,17 +68,17 @@ namespace FlowCommServiceTesting
         {
             string collectionId = Constants.FlowTestingServiceConstants.collectionId;
             var collectionResponse = await flowService.getCollection(collectionId);
-            flowService.PrintResult(collectionResponse, Constants.DataTypes.events);
+            flowService.PrintResult(collectionResponse, Constants.DataTypes.collection);
         }
 
 
         public async Task CompleteTesting()
         {
-            // await getBlock();
-            // await getAccount();
-            // await getTransation();
-            // await getTransationResult();
-            // await getEvents();
+            await getBlock();
+            await getAccount();
+            await getTransation();
+            await getTransationResult();
+            await getEvents();
             await getCollection();
         }
 

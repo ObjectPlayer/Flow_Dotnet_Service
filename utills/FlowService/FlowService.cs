@@ -176,7 +176,7 @@ namespace FlowCommService
 
             else if (type.Equals(Constants.DataTypes.collection))
             {
-                Console.WriteLine($"ID: {data.Id.FromByteStringToHex()}");
+                Console.WriteLine($"ID: {data.Id}");
                 Console.WriteLine("Transactions: [{0}]", data.TransactionIds);
             }
 

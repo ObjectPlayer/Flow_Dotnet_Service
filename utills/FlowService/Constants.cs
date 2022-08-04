@@ -8,7 +8,7 @@ namespace FlowServiceConstants
             public const string testingAddress1 = "0x8ae16e3d178394d9";
             public const string testingTransactionId = "1c364a6fad26986d679e0fe996b3fb96a855f30e4b7942290f494083a6ea3a16";
             public const string testingEventName = "A.cb2d04fc89307107.JoyrideMultiToken.JoyrideMultiTokenInfoEvent";
-            public const string collectionId = "31a5c134b24fb556069575fa3acdfbdf6a0b4faf072df85c32ad476cba308468";
+            public const string collectionId = "0ffafea8665982f3b80c903c8881149804d74a22e3f1492e7cc64a7694cac492";
             public const ulong startBlockHeight = 75529595;
 
 
