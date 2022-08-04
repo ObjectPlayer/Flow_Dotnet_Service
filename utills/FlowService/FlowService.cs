@@ -94,7 +94,7 @@ namespace FlowCommService
 
 
         //Get Events
-        public async Task<IEnumerable<FlowBlockEvent>> getEvent(string eventName, UInt64 startHeight = 74749992, UInt64 endHeight = 74751562)
+        public async Task<IEnumerable<FlowBlockEvent>> getEvent(string eventName, UInt64 startHeight = 0, UInt64 endHeight = 100)
         {
             IEnumerable<FlowBlockEvent> eventResult;
 
@@ -155,17 +155,28 @@ namespace FlowCommService
 
             else if (type.Equals(Constants.DataTypes.events))
             {
-                foreach (var @event in data)
+                if (data is IEnumerable<FlowBlockEvent>)
                 {
-                    Console.WriteLine($"Type: {@event.Type}");
-                    Console.WriteLine($"Values: {@event.Payload.Encode()}");
-                    Console.WriteLine($"Transaction ID: {@event.TransactionId.FromByteStringToHex()} \n");
+                    foreach (var blockEvent in data)
+                    {
+                        PrintResult(blockEvent.Events, Constants.DataTypes.events);
+                    }
+                }
+                else
+                {
+                    foreach (var @event in data)
+                    {
+                        Console.WriteLine($"Type: {@event.Type}");
+                        Console.WriteLine($"Values: {@event.Payload}");
+                        Console.WriteLine($"Transaction ID: {@event.TransactionId} \n");
+                    }
+
                 }
             }
 
             else if (type.Equals(Constants.DataTypes.collection))
             {
-                Console.WriteLine($"ID: {data.Id.FromByteStringToHex()}");
+                Console.WriteLine($"ID: {data.Id}");
                 Console.WriteLine("Transactions: [{0}]", data.TransactionIds);
             }
 
